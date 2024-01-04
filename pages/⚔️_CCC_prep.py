@@ -1,18 +1,42 @@
-from PIL import Image
 import streamlit as st
 
-img1 = Image.open("Images\img1")
-st.title("CCC Prep")
+def display_intro():
+    st.title("CCC Waterloo Coding Competition Prep")
+    st.write(
+        "Welcome to the CCC Waterloo Coding Competition preparation page! "
+        "Here, you'll find resources and practice problems to help you prepare for the competition."
+    )
 
-st.subheader("This page was built to help you prepare for the CCC")
-st.write("Below you will find helpful resources, such as youtube videos and past competetion questions")
+def display_resources():
+    st.header("Resources")
+    st.markdown(
+        "- [Official CCC Website](https://cemc.math.uwaterloo.ca/contests/computing.html)\n"
+        "- [Previous Contest Problems](https://cemc.math.uwaterloo.ca/contests/past_contests.html#ccc)\n"
+        "- [CCC Preparation Material](https://cemc.math.uwaterloo.ca/contests/computing/preparation.html)"
+    )
 
-with st.container():
-    st.write("---")
-    st.write("##")
-    image_coloumn, text_coloumn = st.coloums((1, 2))
-    with image_coloumn:
-        st.image(img1)
-    with text_coloumn:
-        st.subheader("Step by step guide on how to solve previous competiton questions")
-        st.markdown("[Watch Video...](https://www.youtube.com/watch?v=LGGhxbYa9v8)")
+def display_practice_problems():
+    st.header("Practice Problems")
+    # Replace the following with links or content related to practice problems
+    st.markdown(
+        "- [Problem 1](link_to_problem_1)\n"
+        "- [Problem 2](link_to_problem_2)\n"
+        "- [Problem 3](link_to_problem_3)"
+    )
+
+def display_tips():
+    st.header("Tips for Success")
+    st.write(
+        "1. **Understand the Basics:** Ensure you have a solid understanding of fundamental programming concepts."
+        "\n\n2. **Practice Regularly:** Solve a variety of problems to improve your problem-solving skills."
+        "\n\n3. **Manage Your Time:** Practice solving problems under time constraints."
+    )
+
+def main():
+    display_intro()
+    display_resources()
+    display_practice_problems()
+    display_tips()
+
+if __name__ == "__main__":
+    main()
